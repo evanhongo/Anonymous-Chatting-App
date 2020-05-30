@@ -1,0 +1,43 @@
+{
+  "name": "anonymous-chattapp-server",
+  "version": "1.0.0",
+  "description": "anonymous-chattapp-server",
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/anonymous-chatapp.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node ./build/index.js",
+    "start:dev": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel src --out-dir ./build --source-maps",
+    "start:pro": "node ./build/index.js",
+    "server": "nodemon --exec babel-node ./src/index.js",
+    "client": "npm run serve --prefix front-end",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install --prefix front-end && npm run build --prefix front-end"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "chai": "^4.2.0",
+    "concurrently": "^4.1.2",
+    "mocha": "^6.2.3",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.10.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.9.6",
+    "socket.io": "^2.3.0",
+    "uuid": "^3.4.0",
+    "express": "^4.17.1"
+  }
+}

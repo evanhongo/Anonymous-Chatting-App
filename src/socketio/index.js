@@ -1,5 +1,5 @@
 import { createSocketIO } from "./vue-socketio";
 
 export default createSocketIO({
-  addr: "http://localhost:4000"
+  addr: "https://anonymous-chatapp.herokuapp.com"
 });
